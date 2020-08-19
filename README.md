@@ -3,7 +3,8 @@ A Docker container with a legacy openssh client in it, so that you can access ve
 
 ## IMPORTANT!
 This is an INSECURE version of ssh. Please only use it, if you have to other chance to access your system.
-There are lots of legacy systems out in the wild, which have old ssh daemons runing and the vendor does not provide an update, becuase they are "EOL".
+There are lots of legacy systems out in the wild, which have old ssh daemons runing and the vendor does not provide an update, because they are "EOL". That's where this container can be helpful.
+You regard the ssh transfersas NOT encrypted, because some of the algorithms used are substentailly broken. There a reasons why ssh disabled them.
 
 ## Build the container
 Requirementes: make and docker
