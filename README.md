@@ -5,7 +5,7 @@ A Docker container with a legacy openssh client in it, so that you can access ve
 This is an INSECURE version of ssh. Please only use it, if you have to other chance to access your system.
 There are lots of legacy systems out in the wild, which have old ssh daemons runing and the vendor does not provide an update, becuase they are "EOL".
 
-## build it
+## Build the container
 Requirementes: make and docker
 
 ```
@@ -52,9 +52,11 @@ Hint: With sshpass enabled, you need to have a correct kownhosts, ssh will not a
 Your .ssh directory will we mounted into the docker container, so you have the same configs like with your OSes normal ssh.
 Keep in mind that the old ssh doesn't provide all config options that a modern ssh has, so you might end up with errors like this:
 
+```
 /root/.ssh/config: line 1: Bad configuration option: include
+```
 
-You can set a differnet config path in that case like this
+You can set a different config path in that case like this
 ```
 make shellalias CONFDIR=/tmp/foo
 ```
@@ -64,8 +66,10 @@ Keep in mind, that legacyssh does NOT write into your ssh config or in your know
 ## Alternatives
 You can always try to allow weak algorithms on your current ssh. I my experience that can help in a lot of cases, but not in all. Usually ssh barks out telling you, which algorithm it is reluctant to use. Here are some exmaples how to convince ssh, to use them:
 
+```
 ssh -o KexAlgorithms="+diffie-hellman-group1-sha1,diffie-hellman-group14-sha1" -o HostKeyAlgorithms="+ssh-dss" -o Ciphers="+3des-cbc" your-weak-host.ip
 ssh -o KexAlgorithms=diffie-hellman-group14-sha1 -o HostKeyAlgorithms=+ssh-dss your-weak-host.ip
+```
 
 See: https://www.openssh.com/legacy.html
 
