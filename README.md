@@ -9,6 +9,12 @@ You regard the ssh transfersas NOT encrypted, because some of the algorithms use
 ## Github Repo
 The GitHub Repo with the sources can be found here: [https://github.com/derjohn/legacyssh](https://github.com/derjohn/legacyssh)
 
+## Dockerhub
+You can get the container from dockerhub:
+```
+docker pull derjohn/legacyssh:latest
+```
+
 ## Build the container
 Requirementes: make and docker
 
