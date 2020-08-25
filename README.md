@@ -6,6 +6,9 @@ This is an INSECURE version of ssh. Please only use it, if you have to other cha
 There are lots of legacy systems out in the wild, which have old ssh daemons runing and the vendor does not provide an update, because they are "EOL". That's where this container can be helpful.
 You regard the ssh transfersas NOT encrypted, because some of the algorithms used are substentailly broken. There a reasons why ssh disabled them.
 
+## Github Repo
+The GitHub Repo with the sources can be found here: [https://github.com/derjohn/legacyssh](https://github.com/derjohn/legacyssh)
+
 ## Build the container
 Requirementes: make and docker
 
